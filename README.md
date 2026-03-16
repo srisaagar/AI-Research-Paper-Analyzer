@@ -1,48 +1,55 @@
-InsightPaper Pro – AI Research Paper Analyzer
+**📄 InsightPaper Pro – AI Research Paper Analyzer**
 
-InsightPaper Pro is an AI-powered research intelligence platform that allows users to upload academic papers and interact with them using advanced Large Language Models and Retrieval-Augmented Generation (RAG). The system analyzes research papers to extract insights, generate summaries, detect research gaps, visualize citation networks, and even automatically generate presentation slides.
+InsightPaper Pro is an** **AI-powered research paper analysis**** platform that allows users to upload academic PDFs and interact with them using **Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG).**
 
-The platform is designed to assist researchers, students, and academics in understanding complex research papers quickly and efficiently.
+The system automatically analyzes research papers to extract insights such as** **summaries, key contributions, methodologies, citation networks, research gaps, and presentation slides.**
+**
+It runs completely locally using Ollama + Llama3, enabling secure and private research analysis.
 
-Features
-AI Research Paper Analysis
+**🚀 Features**
+**📑 Research Paper Summarization**
 
-Automatically analyzes uploaded research papers and extracts meaningful insights.
+Automatically generates a concise summary of uploaded research papers.
 
-Research Paper Summarization
+**⭐ Key Contribution Extraction**
 
-Generates a concise summary including the problem, proposed solution, results, and conclusion.
+Identifies the main innovations and contributions of the paper.
 
-Key Contribution Extraction
+**⚙ Methodology Detection**
 
-Identifies the main contributions of a research paper.
+Extracts the algorithms, techniques, and methods used in the research.
 
-Methodology Detection
+**🕸 Citation Graph Visualization**
 
-Extracts algorithms, techniques, and methods used in the research.
+Builds a citation network showing relationships between referenced works.
 
-Chat with Research Papers (RAG)
+**💬 Chat with Research Papers (RAG)**
 
-Ask questions about uploaded papers and receive answers grounded in the document context.
+Ask natural language questions about the uploaded papers.
 
-Citation Graph Visualization
+**Example questions:**
+**
+What problem does this paper solve?
 
-Builds a citation network showing relationships between referenced papers.
+What dataset is used?
 
-Similar Research Finder
+What algorithm is proposed?
+**
+**🔬 Research Gap Detection**
 
-Uses semantic embeddings to find related research passages and topics.
+Identifies potential research gaps and future research opportunities.
 
-Research Gap Detection
+**🔍 Similar Research Finder**
 
-Identifies limitations in current work and suggests potential future research directions.
+Uses semantic embeddings to find related research passages.
 
-Automatic PPT Generator
+**📊 Automatic PPT Generator**
 
-Converts research papers into structured presentation slides automatically using AI.
+Converts research papers into conference-style PowerPoint presentations..
 
-System Architecture
-PDF Upload
+**🧠 System Architecture**
+
+**PDF Upload
    │
    ▼
 Text Extraction
@@ -66,46 +73,26 @@ LLM Reasoning
 (Ollama + Llama3)
    │
    ▼
-Streamlit UI
-Technologies Used
+AI Insights + Visualization
+(Streamlit UI)**
 
-Python
-Streamlit
-Ollama
-Llama 3
-Sentence Transformers
-FAISS Vector Search
-NetworkX
-Plotly
-python-pptx
+**🛠 Tech Stack**
 
-Project Structure
-research-paper-analyzer
-│
-├── app.py
-├── analyzer.py
-├── embedder.py
-├── pdf_processor.py
-├── vector_store.py
-├── citation_graph.py
-├── ppt_generator.py
-├── requirements.txt
-└── README.md
-Installation
-1 Install dependencies
-pip install -r requirements.txt
-2 Install Ollama
+**| Component      | Technology            |
+| -------------- | --------------------- |
+| Frontend       | Streamlit             |
+| LLM            | Ollama (Llama3)       |
+| Embeddings     | Sentence Transformers |
+| Vector Search  | FAISS                 |
+| Visualization  | Plotly + NetworkX     |
+| PDF Processing | PyPDF                 |
+| PPT Generation | python-pptx           |
+| Language       | Python                |
+**
 
-Download and install Ollama from
-
-https://ollama.com
-
-Then download the LLM model:
-
-ollama pull llama3
-Run the Application
+**▶ Run the Application
 streamlit run app.py
 
-Then open the application in your browser:
+Open in browser:
 
-http://localhost:8501
+http://localhost:8501**
