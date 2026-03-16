@@ -1,4 +1,5 @@
 import streamlit as st
+from ppt_generator import generate_ppt
 from pdf_processor import extract_text_from_pdf
 from embedder import chunk_text, create_embeddings
 from vector_store import VectorStore
@@ -302,17 +303,25 @@ if uploaded_files:
     st.markdown("<div style='margin-top:1.8rem'></div>", unsafe_allow_html=True)
 
     # ── ANALYSIS BUTTONS ──────────────────────────────────────────────────────
-    col1, col2, col3, col4, col5 = st.columns(5)
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
+
     with col1:
         run_summary = st.button("📑  Summary")
+
     with col2:
         run_contrib = st.button("⭐  Contributions")
+
     with col3:
         run_method = st.button("⚙  Methodology")
+
     with col4:
         run_citation = st.button("🕸  Citation Map")
+
     with col5:
         run_gap = st.button("🔬  Research Gaps")
+
+    with col6:
+        run_ppt = st.button("📊  Generate PPT")
 
     # ── SUMMARY ───────────────────────────────────────────────────────────────
     if run_summary:
@@ -383,6 +392,21 @@ if uploaded_files:
             </div>
             """,
             unsafe_allow_html=True,
+        )
+        # ── PPT GENERATOR ─────────────────────────────────────────────────────────
+if run_ppt:
+
+    with st.spinner("Generating presentation slides…"):
+
+        ppt_file = generate_ppt(combined_text)
+
+    with open(ppt_file, "rb") as f:
+
+        st.download_button(
+            label="⬇ Download Presentation",
+            data=f,
+            file_name="research_presentation.pptx",
+            mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
         )
 
     # ── CHAT ──────────────────────────────────────────────────────────────────
